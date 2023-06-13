@@ -10,10 +10,9 @@ import SwiftUI
 
 
 
-struct SecondPresentationPageView: View {
+struct FirstPresentationPageView: View {
     
-    @Binding var currentPage: Int
-    
+    @Binding var currentPage: Int 
     var body: some View {
         GeometryReader{cell in
             HStack{
@@ -29,7 +28,7 @@ struct SecondPresentationPageView: View {
                     
                     VStack{
                         VStack{
-                            Image("secondPage")
+                            Image("firstPage")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         }
@@ -37,14 +36,23 @@ struct SecondPresentationPageView: View {
                         .padding(.bottom, 15)
                         
                         VStack(alignment: .leading){
+                            Text("CONHEÇA")
+                                .font(.system(size: 28))
+                                .fontWeight(.bold)
+                                .foregroundColor(Color(red: 199 / 255, green: 80 / 255, blue: 0 / 255))
                             
-                            Text("FERRAMENTA DE BUSCA E RECOMENDACÃO")
+                            Text("LITERALLY")
                                 .font(.system(size: 28))
                                 .fontWeight(.black)
                                 .padding(.bottom, 15)
                                 .foregroundColor(Color(red: 199 / 255, green: 80 / 255, blue: 0 / 255))
                             
-                            Text("Você já assistiu um filme e quis muito ler um livro com o enredo parecido? Ou leu um livro e quis muito assistir um filme parecido com um filme que você acabou de assistir? Pois assim funciona o Literally.")
+                            Text("Um app para amantes de literatura e cinema. Assista seus livros e leia seus filmes.")
+                                .foregroundColor(Color(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)))
+                                .fixedSize(horizontal: false, vertical: true)
+                            
+                            Text("Clique em próximo para saber mais e acessar nossa plataforma.")
+                                .padding(.top, 0.5)
                                 .foregroundColor(Color(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)))
                                 .fixedSize(horizontal: false, vertical: true)
                             
@@ -59,7 +67,7 @@ struct SecondPresentationPageView: View {
                         }
                         .padding(.horizontal, 60)
                         .padding(.vertical, 15)
-                        .background(Color(red: 0.63, green: 0.74, blue: 1.0))
+                        .background(Color(red: 255 / 255, green: 188 / 255, blue: 67 / 255))
                         .foregroundColor(.black)
                         .cornerRadius(10)
                         Spacer()
@@ -78,13 +86,16 @@ struct SecondPresentationPageView: View {
 
 
 
-//struct Preview_SecondPresentationPage: PreviewProvider{
+//struct Preview_FirstPresentationPage: PreviewProvider{
+//    @Binding var state: Int = 8
+//
 //    static var previews: some View{
+//
 //        GeometryReader{ cell in
 //            Spacer()
 //                .frame(height: 50)
-//            
-//            SecondPresentationPageView()
+//
+//            FirstPresentationPageView(currentPage: $state)
 //                .frame(maxHeight: cell.size.height/1.2)
 //        }
 //    }

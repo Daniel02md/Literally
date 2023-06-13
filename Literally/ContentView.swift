@@ -19,20 +19,12 @@ struct ContentView: View {
                     .frame(maxHeight: 30)
                 TabView(selection: $selectedPage){
                     
-                    FirstPresentationPagePreview()
+                    FirstPresentationPageView(currentPage: $selectedPage)
                         .frame(maxHeight: cell.size.height/1.2)
                         .tabItem {
                             selectedPage == 0 ? Image("tabBarItem"): Image(systemName: "circle.fill")
                         }
                         .tag(0)
-
-                    FirstPresentationPagePreview()
-                        .frame(maxHeight: cell.size.height/1.2)
-                        .tabItem({
-                            selectedPage == 1 ? Image("tabBarItem"): Image(systemName: "circle.fill");
-                            
-                        })
-                        .tag(1)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .onAppear(){

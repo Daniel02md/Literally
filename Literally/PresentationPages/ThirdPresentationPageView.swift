@@ -10,9 +10,9 @@ import SwiftUI
 
 
 
-struct FirstPresentationPagePreview: View {
-    
- 
+struct ThirdPresentationPageView: View {
+    @Binding var currentPage: Int
+
     
     var body: some View {
         GeometryReader{cell in
@@ -29,7 +29,7 @@ struct FirstPresentationPagePreview: View {
                     
                     VStack{
                         VStack{
-                            Image("firstPage")
+                            Image("thirdPage")
                                 .resizable()
                                 .aspectRatio(contentMode: .fit)
                         }
@@ -37,23 +37,14 @@ struct FirstPresentationPagePreview: View {
                         .padding(.bottom, 15)
                         
                         VStack(alignment: .leading){
-                            Text("CONHEÇA")
-                                .font(.system(size: 28))
-                                .fontWeight(.bold)
-                                .foregroundColor(Color(red: 199 / 255, green: 80 / 255, blue: 0 / 255))
                             
-                            Text("LITERALLY")
+                            Text("PRECISÃO DE RECOMENDACÃO")
                                 .font(.system(size: 28))
                                 .fontWeight(.black)
                                 .padding(.bottom, 15)
                                 .foregroundColor(Color(red: 199 / 255, green: 80 / 255, blue: 0 / 255))
                             
-                            Text("Um app para amantes de literatura e cinema. Assista seus livros e leia seus filmes.")
-                                .foregroundColor(Color(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)))
-                                .fixedSize(horizontal: false, vertical: true)
-                            
-                            Text("Clique em próximo para saber mais e acessar nossa plataforma.")
-                                .padding(.top, 0.5)
+                            Text("Graças a API da Inteligência Artificial Chat GPT versão 4 usada conseguimos uma precisão incrível com as recomendações de livros baseadas em enredos de filmes e recomendações de filmes baseadas em enredo de livros.")
                                 .foregroundColor(Color(cgColor: CGColor(red: 0, green: 0, blue: 0, alpha: 0.7)))
                                 .fixedSize(horizontal: false, vertical: true)
                             
@@ -61,12 +52,14 @@ struct FirstPresentationPagePreview: View {
                         .frame(maxWidth: cell.size.width/1.5, alignment: .leading)
                         
                         Spacer()
-                        Button(action: {}){
-                            Text("Proxima")
+                        Button(action: {
+                            currentPage = currentPage + 1
+                        }){
+                            Text("Próximo")
                         }
                         .padding(.horizontal, 60)
                         .padding(.vertical, 15)
-                        .background(Color(red: 255 / 255, green: 188 / 255, blue: 67 / 255))
+                        .background(Color(red: 1.0, green: 0.43, blue: 0.49))
                         .foregroundColor(.black)
                         .cornerRadius(10)
                         Spacer()
@@ -85,14 +78,14 @@ struct FirstPresentationPagePreview: View {
 
 
 
-struct Preview_FirstPresentationPage: PreviewProvider{
-    static var previews: some View{
-        GeometryReader{ cell in
-            Spacer()
-                .frame(height: 50)
-            
-            FirstPresentationPagePreview()
-                .frame(maxHeight: cell.size.height/1.2)
-        }
-    }
-}
+//struct Preview_ThirdPresentationPage: PreviewProvider{
+//    static var previews: some View{
+//        GeometryReader{ cell in
+//            Spacer()
+//                .frame(height: 50)
+//
+//            ThirdPresentationPageView()
+//                .frame(maxHeight: cell.size.height/1.2)
+//        }
+//    }
+//}
