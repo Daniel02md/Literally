@@ -13,6 +13,7 @@
 		B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */; };
 		B8F3EBF22A18BB2C00199DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F3EBF12A18BB2C00199DC5 /* Assets.xcassets */; };
 		B8F3EBF52A18BB2C00199DC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F3EBF42A18BB2C00199DC5 /* Preview Assets.xcassets */; };
+		CEE54BE32A38E4B300201A02 /* SecondPresentationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE54BE22A38E4B300201A02 /* SecondPresentationPageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		B8F3EBF42A18BB2C00199DC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8F3EBFA2A18BB2C00199DC5 /* LiterallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiterallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F3EC042A18BB2C00199DC5 /* LiterallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiterallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEE54BE22A38E4B300201A02 /* SecondPresentationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPresentationPageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 			children = (
 				B87BA2B22A19A51E00EFB64F /* BasePresentationView.swift */,
 				B87E556B2A1CAE7A00AE7C91 /* FirstPresentationPagePreview.swift */,
+				CEE54BE22A38E4B300201A02 /* SecondPresentationPageView.swift */,
 			);
 			path = PresentationPages;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 			files = (
 				B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */,
 				B8F3EBEE2A18BB2500199DC5 /* LiterallyApp.swift in Sources */,
+				CEE54BE32A38E4B300201A02 /* SecondPresentationPageView.swift in Sources */,
 				B87E556C2A1CAE7A00AE7C91 /* FirstPresentationPagePreview.swift in Sources */,
 				B87BA2B32A19A51E00EFB64F /* BasePresentationView.swift in Sources */,
 			);
