@@ -78,17 +78,18 @@ struct FourthPresentationPagePreview: View {
 }
 
 
-struct Preview_FourthPresentationPage: PreviewProvider{
-    static var previews: some View{
-        GeometryReader{ cell in
-            Spacer()
-                .frame(height: 50)
-            
-            FourthPresentationPagePreview()
-                .frame(maxHeight: cell.size.height/1.2)
-        }
-    }
-}
+//struct Preview_FourthPresentationPage: PreviewProvider{
+//    static var previews: some View{
+//        GeometryReader{ cell in
+//            Spacer()
+//                .frame(height: 50)
+//            
+//            FourthPresentationPagePreview()
+//            
+//                .frame(maxHeight: cell.size.height/1.2)
+//        }
+//    }
+//}
 
                             
 

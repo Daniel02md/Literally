@@ -13,6 +13,8 @@
 		B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */; };
 		B8F3EBF22A18BB2C00199DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F3EBF12A18BB2C00199DC5 /* Assets.xcassets */; };
 		B8F3EBF52A18BB2C00199DC5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F3EBF42A18BB2C00199DC5 /* Preview Assets.xcassets */; };
+		C1F667D92A3CE4BD00B3BF82 /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F667D82A3CE4BD00B3BF82 /* BooksView.swift */; };
+		C1F667DB2A3CE53200B3BF82 /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1F667DA2A3CE53200B3BF82 /* MoviesView.swift */; };
 		CEAB53432A3B503D00C1FD61 /* FourthPresentationPagePreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAB53422A3B503D00C1FD61 /* FourthPresentationPagePreview.swift */; };
 		CEE54BE32A38E4B300201A02 /* SecondPresentationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE54BE22A38E4B300201A02 /* SecondPresentationPageView.swift */; };
 		CEE54BE52A38E74C00201A02 /* ThirdPresentationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEE54BE42A38E74C00201A02 /* ThirdPresentationPageView.swift */; };
@@ -45,6 +47,8 @@
 		B8F3EBF42A18BB2C00199DC5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B8F3EBFA2A18BB2C00199DC5 /* LiterallyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiterallyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F3EC042A18BB2C00199DC5 /* LiterallyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LiterallyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C1F667D82A3CE4BD00B3BF82 /* BooksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
+		C1F667DA2A3CE53200B3BF82 /* MoviesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		CEAB53422A3B503D00C1FD61 /* FourthPresentationPagePreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FourthPresentationPagePreview.swift; sourceTree = "<group>"; };
 		CEE54BE22A38E4B300201A02 /* SecondPresentationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondPresentationPageView.swift; sourceTree = "<group>"; };
 		CEE54BE42A38E74C00201A02 /* ThirdPresentationPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThirdPresentationPageView.swift; sourceTree = "<group>"; };
@@ -75,13 +79,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		655B042D2A38DAB40040364B /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		B87E556A2A1CACCB00AE7C91 /* PresentationPages */ = {
 			isa = PBXGroup;
 			children = (
@@ -115,7 +112,7 @@
 		B8F3EBEC2A18BB2500199DC5 /* Literally */ = {
 			isa = PBXGroup;
 			children = (
-				655B042D2A38DAB40040364B /* New Group */,
+				C124D24F2A423AA9006D1E57 /* ResultPages */,
 				B87E556A2A1CACCB00AE7C91 /* PresentationPages */,
 				B8F3EBED2A18BB2500199DC5 /* LiterallyApp.swift */,
 				B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */,
@@ -131,6 +128,15 @@
 				B8F3EBF42A18BB2C00199DC5 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C124D24F2A423AA9006D1E57 /* ResultPages */ = {
+			isa = PBXGroup;
+			children = (
+				C1F667D82A3CE4BD00B3BF82 /* BooksView.swift */,
+				C1F667DA2A3CE53200B3BF82 /* MoviesView.swift */,
+			);
+			path = ResultPages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,8 +269,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C1F667DB2A3CE53200B3BF82 /* MoviesView.swift in Sources */,
 				CEAB53432A3B503D00C1FD61 /* FourthPresentationPagePreview.swift in Sources */,
 				B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */,
+				C1F667D92A3CE4BD00B3BF82 /* BooksView.swift in Sources */,
 				B8F3EBEE2A18BB2500199DC5 /* LiterallyApp.swift in Sources */,
 				CEE54BE52A38E74C00201A02 /* ThirdPresentationPageView.swift in Sources */,
 				CEE54BE32A38E4B300201A02 /* SecondPresentationPageView.swift in Sources */,
