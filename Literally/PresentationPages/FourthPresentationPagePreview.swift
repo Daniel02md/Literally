@@ -12,7 +12,7 @@ import Foundation
 import SwiftUI
 
 
-struct FourthPresentationPagePreview: View {
+struct FourthPresentationPageView: View {
     @Binding var currentPage: Int
  
     
