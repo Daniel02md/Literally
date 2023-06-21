@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B89690872A4275DE0016670F /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89690862A4275DE0016670F /* ItemListView.swift */; };
 		B8F3EBEE2A18BB2500199DC5 /* LiterallyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EBED2A18BB2500199DC5 /* LiterallyApp.swift */; };
 		B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */; };
 		B8F3EBF22A18BB2C00199DC5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B8F3EBF12A18BB2C00199DC5 /* Assets.xcassets */; };
@@ -17,7 +18,6 @@
 		C1B5CA7E2A424A4F006D9F8A /* FirstPresentationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA782A424A4F006D9F8A /* FirstPresentationPageView.swift */; };
 		C1B5CA7F2A424A4F006D9F8A /* SecondPresentationPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA792A424A4F006D9F8A /* SecondPresentationPageView.swift */; };
 		C1B5CA802A424A4F006D9F8A /* FirstPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA7A2A424A4F006D9F8A /* FirstPageView.swift */; };
-		C1B5CA832A424ADB006D9F8A /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA822A424ADA006D9F8A /* ItemListView.swift */; };
 		C1B5CA872A424B03006D9F8A /* BooksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA852A424B03006D9F8A /* BooksView.swift */; };
 		C1B5CA882A424B03006D9F8A /* MoviesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA862A424B03006D9F8A /* MoviesView.swift */; };
 		C1B5CA8C2A424B35006D9F8A /* GenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA8A2A424B35006D9F8A /* GenreView.swift */; };
@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B89690862A4275DE0016670F /* ItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		B8F3EBEA2A18BB2500199DC5 /* Literally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Literally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F3EBED2A18BB2500199DC5 /* LiterallyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiterallyApp.swift; sourceTree = "<group>"; };
 		B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		C1B5CA782A424A4F006D9F8A /* FirstPresentationPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPresentationPageView.swift; sourceTree = "<group>"; };
 		C1B5CA792A424A4F006D9F8A /* SecondPresentationPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondPresentationPageView.swift; sourceTree = "<group>"; };
 		C1B5CA7A2A424A4F006D9F8A /* FirstPageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirstPageView.swift; sourceTree = "<group>"; };
-		C1B5CA822A424ADA006D9F8A /* ItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		C1B5CA852A424B03006D9F8A /* BooksView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BooksView.swift; sourceTree = "<group>"; };
 		C1B5CA862A424B03006D9F8A /* MoviesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesView.swift; sourceTree = "<group>"; };
 		C1B5CA8A2A424B35006D9F8A /* GenreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreView.swift; sourceTree = "<group>"; };
@@ -95,6 +95,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B89690852A4275DE0016670F /* itensView */ = {
+			isa = PBXGroup;
+			children = (
+				B89690862A4275DE0016670F /* ItemListView.swift */,
+			);
+			path = itensView;
+			sourceTree = "<group>";
+		};
 		B8F3EBE12A18BB2500199DC5 = {
 			isa = PBXGroup;
 			children = (
@@ -116,12 +124,12 @@
 		B8F3EBEC2A18BB2500199DC5 /* Literally */ = {
 			isa = PBXGroup;
 			children = (
+				B89690852A4275DE0016670F /* itensView */,
 				C1B5CAA12A424BCE006D9F8A /* Preview Content */,
 				C1B5CA912A424B78006D9F8A /* SearchPage */,
 				C1B5CA8E2A424B51006D9F8A /* FavoritesPage */,
 				C1B5CA892A424B35006D9F8A /* ResultsByGender */,
 				C1B5CA842A424B03006D9F8A /* ResultPages */,
-				C1B5CA812A424ADA006D9F8A /* itensView */,
 				C1B5CA742A424A4F006D9F8A /* PresentationPages */,
 				C1B5CA722A4249E2006D9F8A /* Assets.xcassets */,
 				B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */,
@@ -142,15 +150,6 @@
 				C1B5CA7A2A424A4F006D9F8A /* FirstPageView.swift */,
 			);
 			path = PresentationPages;
-			sourceTree = "<group>";
-		};
-		C1B5CA812A424ADA006D9F8A /* itensView */ = {
-			isa = PBXGroup;
-			children = (
-				C1B5CA822A424ADA006D9F8A /* ItemListView.swift */,
-			);
-			name = itensView;
-			path = ../../Documents/Teste/Literally/Literally/itensView;
 			sourceTree = "<group>";
 		};
 		C1B5CA842A424B03006D9F8A /* ResultPages */ = {
@@ -330,12 +329,12 @@
 				C1B5CA802A424A4F006D9F8A /* FirstPageView.swift in Sources */,
 				C1B5CA7D2A424A4F006D9F8A /* FourthPresentationPagePreview.swift in Sources */,
 				B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */,
+				B89690872A4275DE0016670F /* ItemListView.swift in Sources */,
 				C1B5CA902A424B51006D9F8A /* headerFavoriteView.swift in Sources */,
 				C1B5CA7B2A424A4F006D9F8A /* BasePresentationView.swift in Sources */,
 				C1B5CA7F2A424A4F006D9F8A /* SecondPresentationPageView.swift in Sources */,
 				C1B5CA872A424B03006D9F8A /* BooksView.swift in Sources */,
 				C1B5CA8C2A424B35006D9F8A /* GenreView.swift in Sources */,
-				C1B5CA832A424ADB006D9F8A /* ItemListView.swift in Sources */,
 				B8F3EBEE2A18BB2500199DC5 /* LiterallyApp.swift in Sources */,
 				C1B5CA7E2A424A4F006D9F8A /* FirstPresentationPageView.swift in Sources */,
 				C1B5CA9B2A424B78006D9F8A /* teste.swift in Sources */,
