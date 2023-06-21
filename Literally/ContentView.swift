@@ -28,10 +28,9 @@ struct ContentView: View {
 
                     FirstPresentationPagePreview()
                         .frame(maxHeight: cell.size.height/1.2)
-                        .tabItem({
+                        .tabItem{
                             selectedPage == 1 ? Image("tabBarItem"): Image(systemName: "circle.fill");
-                            
-                        })
+                        }
                         .tag(1)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
