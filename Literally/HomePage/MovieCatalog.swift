@@ -42,8 +42,9 @@ struct MovieCatalog: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             ForEach(byActors, id: \.self){resultMovies in
+                                let img: URL = URL(string: "\(resultMovies.coverImageURL)")!
                                 NavigationLink(destination:
-                                                MovieView(imageUrl: resultMovies.coverImageURL, title: resultMovies.title, author: resultMovies.authors[0], rate: <#T##Float#>)
+                                                MovieView(imageUrl: img, title: resultMovies.title, rate: resultMovies.rate, description: resultMovies.description)
                                     .onAppear{
                                         let data = DataController()
                                         data.addRecentMovie(resultMovies, context: managedObjectContext)
@@ -67,7 +68,11 @@ struct MovieCatalog: View {
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack{
                                 ForEach(recents){recent in
-                                    NavigationLink(destination: Text("")){
+                                    let img: URL = URL(string: recent.movie!.coverImageURL!)!
+
+                                    NavigationLink(destination: {
+                                        MovieView(imageUrl: img, title: recent.movie!.title ?? "Sem título", rate: 0.0, description: recent.movie!.fullDescription ?? "Sem descricao")
+                                    }){
                                         ItemCatalog(
                                             imageUrl: recent.movie!.coverImageURL!,
                                             title: recent.movie!.title!,

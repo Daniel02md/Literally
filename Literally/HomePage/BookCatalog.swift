@@ -70,7 +70,11 @@ struct BookCatalog: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             ForEach(recents){recent in
-                                NavigationLink(destination: Text("")){
+                                let img: URL = URL(string: recent.book!.coverImageURL!)!
+
+                                NavigationLink(destination: {
+                                    MovieView(imageUrl: img, title: recent.book!.title ?? "Sem título", rate: 0.0, description: recent.book!.fullDescription ?? "Sem descricao")
+                                }){
                                     ItemCatalog(
                                         imageUrl: recent.book!.coverImageURL!,
                                         title: recent.book!.title!,
