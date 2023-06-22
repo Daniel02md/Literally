@@ -42,8 +42,9 @@ struct BookCatalog: View {
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             ForEach(byAuthors, id: \.self){resultBooks in
+                                let img: URL = URL(string: resultBooks.coverImageURL)!
                                 NavigationLink(destination:
-                                    Text(resultBooks.title)
+                                    BookView(imageUrl: img, title: resultBooks.title, rate: resultBooks.rate, description: resultBooks.description)
                                     .onAppear{
                                         let data = DataController()
                                         data.addRecentBook(resultBooks, context: managedObjectContext)
@@ -75,6 +76,7 @@ struct BookCatalog: View {
                                         title: recent.book!.title!,
                                         author: recent.book!.authors!
                                     )
+                                    .padding(.leading, 20)
                                 }
                             }
                         }

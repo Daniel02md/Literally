@@ -43,7 +43,7 @@ struct MovieCatalog: View {
                         HStack{
                             ForEach(byActors, id: \.self){resultMovies in
                                 NavigationLink(destination:
-                                                Text(resultMovies.title)
+                                                MovieView(imageUrl: resultMovies.coverImageURL, title: resultMovies.title, author: resultMovies.authors[0], rate: <#T##Float#>)
                                     .onAppear{
                                         let data = DataController()
                                         data.addRecentMovie(resultMovies, context: managedObjectContext)
