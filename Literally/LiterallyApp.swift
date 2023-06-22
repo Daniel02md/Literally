@@ -10,6 +10,7 @@ import SwiftUI
 @main
 struct LiterallyApp: App {
     @AppStorage("isNew") var isNew = true
+    @StateObject private var dataController = DataController()
     
     var body: some Scene {
         WindowGroup {
@@ -17,8 +18,10 @@ struct LiterallyApp: App {
                 ContentView(isNew: $isNew)
             }
             else{
-                baseSearchView()
+                HomePageView()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
             }
         }
+        
     }
 }

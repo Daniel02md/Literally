@@ -30,7 +30,6 @@ struct ContentView: View {
                         .frame(maxHeight: cell.size.height/1.2)
                         .tabItem {
                             selectedPage == 1 ? Image("tabBarItem"): Image(systemName: "circle.fill")
-                        }
                         .tag(1)
                     ThirdPresentationPageView(currentPage: $selectedPage)
                         .frame(maxHeight: cell.size.height/1.2)
