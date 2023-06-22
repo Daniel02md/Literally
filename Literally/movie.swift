@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct movie: Hashable{
+struct item: Hashable{
     var movieID: UUID = UUID()
     var imageUrl: String
     var title: String

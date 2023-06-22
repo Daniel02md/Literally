@@ -14,47 +14,50 @@ struct ItemListView: View {
     var rate: Float
     
     var body: some View {
-        NavigationStack{
-            HStack(spacing: 25){
+        HStack(spacing: 25){
+            Spacer()
+            VStack(alignment: .leading){
                 Spacer()
-                VStack(){
-                    Spacer()
-                    AsyncImage(url: self.imageUrl, content: { phase in
-                        switch(phase){
-                        case .empty:
-                            Spacer()
-                            ProgressView()
-                            Spacer()
-                        case .success(let image):
-                            image
-                                .resizable()
-                                .cornerRadius(15)
-                                .aspectRatio(contentMode: .fit)
-                                .padding(5)
-                                .background(Color(red: 0.86, green: 0.86, blue: 0.86))
-                                .clipShape(RoundedRectangle(cornerRadius: 15))
-                                .shadow(radius: 2, x: 0, y: 2)
-                        case .failure(let error):
-                            Spacer()
-                            ProgressView()
-                            Spacer()
-                        default:
-                            EmptyView()
-                        }
-                    })
-                            
-                }
-                    
+                AsyncImage(url: self.imageUrl, content: { phase in
+                    switch(phase){
+                    case .empty:
+                        Spacer()
+                        ProgressView()
+                            .frame(width: 119, height: 169)
+                        Spacer()
+                    case .success(let image):
+                        image
+                            .resizable()
+                            .cornerRadius(15)
+                            .aspectRatio(contentMode: .fit)
+                            .padding(5)
+                            .background(Color(red: 0.86, green: 0.86, blue: 0.86))
+                            .clipShape(RoundedRectangle(cornerRadius: 15))
+                            .shadow(radius: 2, x: 0, y: 2)
+                            .frame(width: 119, height: 169)
+                    case .failure(let error):
+                        Spacer()
+                        ProgressView()
+                            .frame(width: 119, height: 169)
+                        Spacer()
+                    default:
+                        EmptyView()
+                    }
+                })
+                
+            }
+            GeometryReader{ geometry in
                 VStack(alignment: .leading){
                     Spacer()
                     Text("\(self.title)")
                         .font(.system(size: 20))
+                        .multilineTextAlignment(.leading)
                         .fontWeight(.heavy)
-                        
+                    
                     Text("\(self.author)")
                         .font(.system(size: 14))
                         .fontWeight(.light)
-                        
+                    
                     HStack{
                         ForEach(1 ..< Int(self.rate + 1)) { item in
                             Image("star")
@@ -62,15 +65,17 @@ struct ItemListView: View {
                     }
                     Spacer()
                 }
-                Spacer()
+                .frame(width: geometry.size.width/1.6, alignment: .leading)
+                
             }
-            .frame(maxWidth: .infinity, maxHeight: 200)
-            
-        
         }
-        }
+        .frame(maxWidth: .infinity, maxHeight: 200)
         
+        
+    }
 }
+        
+
 
 struct ItemListView_Previews: PreviewProvider {
     static var previews: some View {

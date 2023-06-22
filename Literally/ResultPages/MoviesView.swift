@@ -14,10 +14,10 @@ struct MovieView: View {
     var title: String
     var rate: Float
     var sumario: String
-    @State var recomendations: [book] = [
-        book(imageUrl: "https://books.google.com.br/books/publisher/content?id=Ez7NDwAAQBAJ&hl=pt-BR&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U318iID-2tDrnAKFXK3fR8YtYITpw&w=1280", title: "O Céu que nos oprime", creator: "Josh Boone", rate: 4.8, sumary: "O livro que inspirou o filme Jojo Rabbit , do diretor Taika Waititi, vencedor do Oscar de Melhor Roteiro Adaptado; para fãs dos best-sellers A menina que roubava livros e O menino do pijama listrado. “Um desses livros impossíveis de esquecer.” - Le Monde Como muitos meninos austríacos na época da anexação da Áustria ao Reich alemão, no fim da década de 1930, Johannes Betzler abraça inocentemente o sonho nazista. Integrante da Juventude Hitlerista, ele descobre que seus pais estão escondendo uma jovem judia, Elsa Kor, atrás de uma parede falsa em sua casa, em Viena. Seu horror inicial vira interesse, depois amor e obsessão. Após o desaparecimento de seus pais, Johannes descobre que ele é a única pessoa ciente da existência de Elsa e único responsável por sua sobrevivência. Manipulando e sendo manipulado, Johannes teme o fim da guerra: com isso virá a perspectiva de perder Elsa e um relacionamento que varia entre paixão e obsessão, dependência e indiferença, amor e ódio."),
-        book(imageUrl: "https://m.media-amazon.com/images/I/61L+4OBhm-L._AC_UF350,350_QL50_.jpg", title: "A Menina que Roubava Livros", creator: "Markus Zusak", rate: 3.5, sumary: "A trajetória de Liesel Meminger é contada por uma narradora mórbida, surpreendentemente simpática. Ao perceber que a pequena ladra de livros lhe escapa, a Morte afeiçoa-se à menina e rastreia suas pegadas de 1939 a 1943. Traços de uma sobrevivente: a mãe comunista, perseguida pelo nazismo, envia Liesel e o irmão para o subúrbio pobre de uma cidade alemã, onde um casal se dispõe a adotá-los por dinheiro. O garoto morre no trajeto e é enterrado por um coveiro que deixa cair um livro na neve. É o primeiro de uma série que a menina vai surrupiar ao longo dos anos. O único vínculo com a família é esta obra, que ela ainda não sabe ler. Assombrada por pesadelos, ela compensa o medo e a solidão das noites com a conivência do pai adotivo, um pintor de parede bonachão que lhe dá lições de leitura. Alfabetizada sob vistas grossas da madrasta, Liesel canaliza urgências para a literatura. Em tempos de livros incendiados, ela os furta, ou os lê na biblioteca do prefeito da cidade."),
-        book(imageUrl: "https://i.zst.com.br/thumbs/12/1a/c/52392433.jpg", title: "O Menino do Pijama Listrado", creator: "John Boyne", rate: 4.2, sumary: "Bruno tem nove anos e não sabe nada sobre o Holocausto e a Solução Final contra os judeus. Também não faz idéia que seu país está em guerra com boa parte da Europa, e muito menos que sua família está envolvida no conflito. Na verdade, Bruno sabe apenas que foi obrigado a abandonar a espaçosa casa em que vivia em Berlim e a mudar-se para uma região desolada, onde ele não tem ninguém para brincar nem nada para fazer. Da janela do quarto, Bruno pode ver uma cerca, e para além dela centenas de pessoas de pijama, que sempre o deixam com frio na barriga. Em uma de suas andanças Bruno conhece Shmuel, um garoto do outro lado da cerca que curiosamente nasceu no mesmo dia que ele. Conforme a amizade dos dois se intensifica, Bruno vai aos poucos tentando elucidar o mistério que ronda as atividades de seu pai. ")
+    @State var recomendations: [item] = [
+        item(imageUrl: "https://books.google.com.br/books/publisher/content?id=Ez7NDwAAQBAJ&hl=pt-BR&pg=PP1&img=1&zoom=3&bul=1&sig=ACfU3U318iID-2tDrnAKFXK3fR8YtYITpw&w=1280", title: "O Céu que nos oprime", creator: "Josh Boone", rate: 4.8, sumary: "O livro que inspirou o filme Jojo Rabbit , do diretor Taika Waititi, vencedor do Oscar de Melhor Roteiro Adaptado; para fãs dos best-sellers A menina que roubava livros e O menino do pijama listrado. “Um desses livros impossíveis de esquecer.” - Le Monde Como muitos meninos austríacos na época da anexação da Áustria ao Reich alemão, no fim da década de 1930, Johannes Betzler abraça inocentemente o sonho nazista. Integrante da Juventude Hitlerista, ele descobre que seus pais estão escondendo uma jovem judia, Elsa Kor, atrás de uma parede falsa em sua casa, em Viena. Seu horror inicial vira interesse, depois amor e obsessão. Após o desaparecimento de seus pais, Johannes descobre que ele é a única pessoa ciente da existência de Elsa e único responsável por sua sobrevivência. Manipulando e sendo manipulado, Johannes teme o fim da guerra: com isso virá a perspectiva de perder Elsa e um relacionamento que varia entre paixão e obsessão, dependência e indiferença, amor e ódio."),
+        item(imageUrl: "https://m.media-amazon.com/images/I/61L+4OBhm-L._AC_UF350,350_QL50_.jpg", title: "A Menina que Roubava Livros", creator: "Markus Zusak", rate: 3.5, sumary: "A trajetória de Liesel Meminger é contada por uma narradora mórbida, surpreendentemente simpática. Ao perceber que a pequena ladra de livros lhe escapa, a Morte afeiçoa-se à menina e rastreia suas pegadas de 1939 a 1943. Traços de uma sobrevivente: a mãe comunista, perseguida pelo nazismo, envia Liesel e o irmão para o subúrbio pobre de uma cidade alemã, onde um casal se dispõe a adotá-los por dinheiro. O garoto morre no trajeto e é enterrado por um coveiro que deixa cair um livro na neve. É o primeiro de uma série que a menina vai surrupiar ao longo dos anos. O único vínculo com a família é esta obra, que ela ainda não sabe ler. Assombrada por pesadelos, ela compensa o medo e a solidão das noites com a conivência do pai adotivo, um pintor de parede bonachão que lhe dá lições de leitura. Alfabetizada sob vistas grossas da madrasta, Liesel canaliza urgências para a literatura. Em tempos de livros incendiados, ela os furta, ou os lê na biblioteca do prefeito da cidade."),
+        item(imageUrl: "https://img.skoob.com.br/dplDpTweWpBAuEixwqu6LHsv72o=/600x0/center/top/filters:format(jpeg)/https://skoob.s3.amazonaws.com/livros/101/O_MENINO_DO_PIJAMA_LISTRADO_1388769075B.jpg", title: "O Menino do Pijama Listrado", creator: "John Boyne", rate: 4.2, sumary: "Bruno tem nove anos e não sabe nada sobre o Holocausto e a Solução Final contra os judeus. Também não faz idéia que seu país está em guerra com boa parte da Europa, e muito menos que sua família está envolvida no conflito. Na verdade, Bruno sabe apenas que foi obrigado a abandonar a espaçosa casa em que vivia em Berlim e a mudar-se para uma região desolada, onde ele não tem ninguém para brincar nem nada para fazer. Da janela do quarto, Bruno pode ver uma cerca, e para além dela centenas de pessoas de pijama, que sempre o deixam com frio na barriga. Em uma de suas andanças Bruno conhece Shmuel, um garoto do outro lado da cerca que curiosamente nasceu no mesmo dia que ele. Conforme a amizade dos dois se intensifica, Bruno vai aos poucos tentando elucidar o mistério que ronda as atividades de seu pai. ")
     ]
     
     @State var isButtonPressed: Bool = false
@@ -58,6 +58,7 @@ struct MovieView: View {
                                 case .empty:
                                     Spacer()
                                     ProgressView()
+                                        .frame(width: 120, height: 180)
                                     Spacer()
                                 case .success(let image):
                                     image
@@ -71,6 +72,8 @@ struct MovieView: View {
                                 case .failure(let error):
                                     Spacer()
                                     ProgressView()
+                                        .frame(width: 120, height: 180)
+
                                     Spacer()
                                 default:
                                     EmptyView()
@@ -118,16 +121,17 @@ struct MovieView: View {
 
                                     
                                     NavigationLink(destination:{
-                                        ItemListView(imageUrl: img, title: "\(book.title)", author: book.creator, rate: book.rate)
+                                        MovieView(imageUrl: img, title: book.title, rate: book.rate, sumario: "\(book.sumary)")
                                     }){
                                         ItemListView(imageUrl: img, title: "\(book.title)", author: "\(book.creator)", rate: book.rate)
-          
+                                            
                                     }
                                     .foregroundColor(.black)
                                 }
                             }.frame(maxWidth: .infinity)
                            
-                            }
+                        }.padding(.init(top: 0, leading: 10, bottom: 0, trailing: 10))
+
                         }
                     }
                 }

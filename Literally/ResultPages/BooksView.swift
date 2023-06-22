@@ -14,10 +14,10 @@ struct BookView: View {
     var title: String
     var rate: Float
     var sumario: String
-    @State var recomendations: [movie] = [
-        movie(imageUrl: "https://m.media-amazon.com/images/I/91K-MrUTNOL._AC_UF1000,1000_QL80_.jpg", title: "A Culpa é das estrelas", creator: "Josh Boone", rate: 2.7, sumary: "Dois adolescentes com câncer, Hazel Grace e Gus, embarcam em uma jornada de amor e descoberta. Apesar dos obstáculos, eles encontram força e alegria um no outro, explorando a vida e a mortalidade de uma maneira única e inesquecível."),
-        movie(imageUrl: "https://br.web.img3.acsta.net/medias/nmedia/18/91/05/16/20127313.jpg", title: "Para Sempre", creator: "Michael Sucsy", rate: 4.8, sumary: "Paige e Leo são um casal feliz até um acidente mudar tudo. Com a perda de sua memória, Paige não se lembra de Leo, e ele precisa reconquistar seu amor e reconstruir seu relacionamento. Uma história de luta, esperança e amor verdadeiro além das adversidades."),
-        movie(imageUrl: "https://upload.wikimedia.org/wikipedia/pt/a/ad/One_Day_Poster.jpg", title: "Um dia", creator: "Lone Scherfig", rate: 4.2, sumary: "Emma e Dexter se encontram todo dia 15 de julho ao longo de vinte anos, testemunhando o desenvolvimento de suas vidas e relacionamento. Conforme eles enfrentam desafios e oportunidades, a amizade e o amor entre eles se tornam uma jornada emocional e reveladora.")
+    @State var recomendations: [item] = [
+        item(imageUrl: "https://m.media-amazon.com/images/I/91K-MrUTNOL._AC_UF1000,1000_QL80_.jpg", title: "A Culpa é das estrelas", creator: "Josh Boone", rate: 2.7, sumary: "Dois adolescentes com câncer, Hazel Grace e Gus, embarcam em uma jornada de amor e descoberta. Apesar dos obstáculos, eles encontram força e alegria um no outro, explorando a vida e a mortalidade de uma maneira única e inesquecível."),
+        item(imageUrl: "https://br.web.img3.acsta.net/medias/nmedia/18/91/05/16/20127313.jpg", title: "Para Sempre", creator: "Michael Sucsy", rate: 4.8, sumary: "Paige e Leo são um casal feliz até um acidente mudar tudo. Com a perda de sua memória, Paige não se lembra de Leo, e ele precisa reconquistar seu amor e reconstruir seu relacionamento. Uma história de luta, esperança e amor verdadeiro além das adversidades."),
+        item(imageUrl: "https://upload.wikimedia.org/wikipedia/pt/a/ad/One_Day_Poster.jpg", title: "Um dia", creator: "Lone Scherfig", rate: 4.2, sumary: "Emma e Dexter se encontram todo dia 15 de julho ao longo de vinte anos, testemunhando o desenvolvimento de suas vidas e relacionamento. Conforme eles enfrentam desafios e oportunidades, a amizade e o amor entre eles se tornam uma jornada emocional e reveladora.")
     ]
     
     @State private var isButtonPressed = false
@@ -114,7 +114,7 @@ struct BookView: View {
                                     .fontWeight(.bold)
                             }
                             
-                            VStack(){
+                            VStack(alignment: .trailing){
                                 ForEach(recomendations, id: \.self) { movie in
                                     let img: URL = URL(string: "\(movie.imageUrl)")!
 
@@ -126,8 +126,10 @@ struct BookView: View {
                                             
                                     }
                                     .foregroundColor(.black)
-                                }
-                            }.frame(maxWidth: .infinity)
+
+                                }.padding(.init(top: 0, leading: 10, bottom: 0, trailing: 10))
+
+                            }
                         }
                     }
                     
