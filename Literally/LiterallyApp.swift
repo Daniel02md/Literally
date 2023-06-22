@@ -10,15 +10,18 @@ import SwiftUI
 @main
 struct LiterallyApp: App {
     @AppStorage("isNew") var isNew = true
+    @StateObject private var dataController = DataController()
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup{
             if isNew{
                 ContentView(isNew: $isNew)
             }
             else{
-                baseSearchView()
+                HomePageView()
+                    .environment(\.managedObjectContext, dataController.container.viewContext)
             }
         }
+        
     }
 }

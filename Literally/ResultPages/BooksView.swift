@@ -28,6 +28,7 @@ struct BookView: View {
                 
                 HStack{
                     Spacer()
+
                     Button(action: {
                         isButtonPressed.toggle()
                     }, label: {
