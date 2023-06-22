@@ -17,7 +17,7 @@ struct LiterallyApp: App {
                 ContentView(isNew: $isNew)
             }
             else{
-                Text("")
+                baseSearchView()
             }
         }
     }

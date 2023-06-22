@@ -19,20 +19,31 @@ struct ContentView: View {
                     .frame(maxHeight: 30)
                 TabView(selection: $selectedPage){
                     
-                    FirstPresentationPagePreview()
+                    FirstPresentationPageView(currentPage: $selectedPage)
                         .frame(maxHeight: cell.size.height/1.2)
                         .tabItem {
                             selectedPage == 0 ? Image("tabBarItem"): Image(systemName: "circle.fill")
                         }
                         .tag(0)
-
-                    FirstPresentationPagePreview()
+                    
+                    SecondPresentationPageView(currentPage: $selectedPage)
                         .frame(maxHeight: cell.size.height/1.2)
-                        .tabItem({
-                            selectedPage == 1 ? Image("tabBarItem"): Image(systemName: "circle.fill");
-                            
-                        })
+                        .tabItem {
+                            selectedPage == 1 ? Image("tabBarItem"): Image(systemName: "circle.fill")
+                        }
                         .tag(1)
+                    ThirdPresentationPageView(currentPage: $selectedPage)
+                        .frame(maxHeight: cell.size.height/1.2)
+                        .tabItem {
+                            selectedPage == 2 ? Image("tabBarItem"): Image(systemName: "circle.fill")
+                        }
+                        .tag(2)
+                    FourthPresentationPageView(currentPage: $selectedPage)
+                        .frame(maxHeight: cell.size.height/1.2)
+                        .tabItem {
+                            selectedPage == 3 ? Image("tabBarItem"): Image(systemName: "circle.fill")
+                        }
+                        .tag(3)
                 }
                 .tabViewStyle(.page(indexDisplayMode: .always))
                 .onAppear(){
