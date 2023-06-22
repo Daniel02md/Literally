@@ -26,12 +26,11 @@ struct BookView: View {
                 
                 HStack{
                     Spacer()
-                    Button {
-                            
+                    Button (action: {
+                        Image("fullfilledIcon")
                     } label: {
                         Image("icon")
-
-                    }
+                    })
                 }
                 .padding()
                 
