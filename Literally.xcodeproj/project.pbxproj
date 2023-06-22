@@ -43,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		655B042F2A38E0400040364B /* HomePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		6573AC252A433595003F42FB /* dataTraining.csv */ = {isa = PBXFileReference; lastKnownFileType = text; name = dataTraining.csv; path = ../../../../dataTraining.csv; sourceTree = "<group>"; };
 		65EE6B4E2A42162900FF6096 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		65EE6B512A4216F700FF6096 /* DataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		65EE6B532A4216F700FF6096 /* Literally.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Literally.xcdatamodel; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				65EE6B4E2A42162900FF6096 /* Book.swift */,
+				6573AC252A433595003F42FB /* dataTraining.csv */,
 				B80479C62A3FF83200B494B4 /* BooksAPI.swift */,
 			);
 			path = DataProvider;

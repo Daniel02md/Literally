@@ -14,6 +14,7 @@ struct BookCatalog: View {
     
     @State var byAuthors: [Book] = []
     @State var author: String  = String()
+    
     let authors = [
         "J.K. Rowling",
         "George R.R. Martin",
