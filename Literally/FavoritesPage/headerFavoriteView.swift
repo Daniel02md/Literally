@@ -11,27 +11,29 @@ struct headerFavoriteView: View {
     var saves = ["aaaa", "bbbb"]
     var body: some View {
         NavigationStack{
-            HStack{
-                Text("Salvos")
-                    .font(.system(size: 32))
-                    .fontWeight(.black)
-            }
-            
-            List{
-                ForEach(saves, id: \.self) { name in
-                    NavigationLink{
-                        Text(name)
-                    } label: {
-                        Text(name)
+            VStack {
+                
+                Text("")
+                    .navigationBarTitle("Favoritos")
+                    .toolbar{
+                        ToolbarItem{
+                            Button(action: {
+                                print("a")
+                            }, label: {
+                                Image("fullfilledIcon")
+                                
+                            })
+                        }
                     }
-                }
+                
+                
             }
         }
     }
-}
-
-struct favoriteView_Previews: PreviewProvider {
-    static var previews: some View {
-        headerFavoriteView()
+    
+    struct favoriteView_Previews: PreviewProvider {
+        static var previews: some View {
+            headerFavoriteView()
+        }
     }
 }

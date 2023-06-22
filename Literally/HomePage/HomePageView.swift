@@ -19,7 +19,9 @@ struct HomePageView: View{
                 .searchable(text: $searchTerm)
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
-                        NavigationLink(destination: Text("Favoritos")){
+                        NavigationLink(destination: {
+                            
+                        }){
                             Image(systemName: "bookmark")
                                 .resizable()
                                 .frame(height: 20)

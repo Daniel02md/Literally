@@ -19,9 +19,9 @@ struct HomeCatalog: View {
         VStack(){
             HStack(alignment: .top){
                 Button(action:{scope = .movie}){
-                    VStack(spacing: 5){
+                    VStack(spacing: 2){
                         Text("Filmes")
-                            .font(.system(size: 24, design: .rounded))
+                            .font(.system(size: 20, design: .rounded))
                             .foregroundColor(scope == .movie ? Color.orange : Color.gray)
                         Rectangle()
                             .frame(width: 50, height: 2)
@@ -31,13 +31,13 @@ struct HomeCatalog: View {
                 
                 Spacer()
                 Button(action:{scope = .book}){
-                    VStack(spacing: 5){
+                    VStack(spacing: 2){
                         Text("Livros")
                             .foregroundColor(scope == .book ? Color.orange : Color.gray)
-                            .font(.system(size: 24, design: .rounded))
+                            .font(.system(size: 20, design: .rounded))
                             
                         Rectangle()
-                            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.5), radius: 5)
+                            .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.2), radius: 5)
                             .frame(width: 50, height: 2)
                             .foregroundColor(scope == .book ? Color.orange : Color.gray)
                     }
@@ -58,7 +58,7 @@ struct HomeCatalog: View {
             }
             
         }
-        .padding(.top, 50)
+        .padding(.top, 20)
     }
 }
 
