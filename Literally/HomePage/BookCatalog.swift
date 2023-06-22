@@ -35,6 +35,7 @@ struct BookCatalog: View {
                 Section(header:
                             Text("Autor do dia: \(self.author)")
                     .font(.system(.title2))
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){
@@ -49,7 +50,7 @@ struct BookCatalog: View {
                                     }
                                 ){
                                     ItemCatalog(imageUrl: resultBooks.coverImageURL, title: resultBooks.title, author: resultBooks.authors[0])
-                                        .padding(.leading, 30)
+                                        .padding(.leading, 20)
                                 }
                             }
                         }
@@ -61,6 +62,7 @@ struct BookCatalog: View {
                 Section(header:
                             Text("Recentes")
                     .font(.system(.title2))
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){

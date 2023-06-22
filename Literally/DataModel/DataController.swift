@@ -48,4 +48,21 @@ class DataController: ObservableObject{
         save(context: context)
     }
     
+    func addRecentMovie(_ bookData: Book, context: NSManagedObjectContext){
+        let book = Book_DB(context: context)
+        book.bookID = bookData.bookId
+        book.title = bookData.title
+        book.authors = bookData.authors[0]
+        book.coverImageURL = bookData.coverImageURL
+        book.fullDescription = bookData.description
+        
+        
+        
+        let recent = RecentBook(context: context)
+        recent.date = Date()
+        recent.book = book
+        
+        save(context: context)
+    }
+    
 }

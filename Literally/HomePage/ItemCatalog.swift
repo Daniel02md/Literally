@@ -49,8 +49,13 @@ struct ItemCatalog: View {
                     switch(phase){
                     case .empty:
                         ProgressView()
-                    case .success:
-                        phase.image
+                    case .success (let image):
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 115, height: 160)
+                            .cornerRadius(15)
+                        
                             
                     case .failure(let error):
                         Text("failed to load: \(error.localizedDescription)")
@@ -72,6 +77,6 @@ struct ItemCatalog: View {
 
 struct ItemCatalog_Previews: PreviewProvider {
     static var previews: some View {
-        ItemCatalog(imageUrl: "https://books.google.com/books/content?id=Zv3LygAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", title: "John Wick", author: "Chad Stadfasdfas")
+        ItemCatalog(imageUrl: "https://books.google.com/books/content?id=Zv3LygAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", title: "John Wick", author: "Chad Stad")
     }
 }

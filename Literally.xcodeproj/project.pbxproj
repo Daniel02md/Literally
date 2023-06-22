@@ -36,7 +36,7 @@
 		C1B5CA9A2A424B78006D9F8A /* baseSearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA922A424B78006D9F8A /* baseSearchView.swift */; };
 		C1B5CA9B2A424B78006D9F8A /* teste.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1B5CA932A424B78006D9F8A /* teste.swift */; };
 		C1B5CAA32A424BCE006D9F8A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1B5CAA22A424BCE006D9F8A /* Preview Assets.xcassets */; };
-		CE3A9A6B2A43368D0076FC29 /* movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A9A6A2A43368D0076FC29 /* movie.swift */; };
+		CE3A9A6B2A43368D0076FC29 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3A9A6A2A43368D0076FC29 /* Movie.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +89,7 @@
 		C1B5CA922A424B78006D9F8A /* baseSearchView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = baseSearchView.swift; sourceTree = "<group>"; };
 		C1B5CA932A424B78006D9F8A /* teste.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = teste.swift; sourceTree = "<group>"; };
 		C1B5CAA22A424BCE006D9F8A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		CE3A9A6A2A43368D0076FC29 /* movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = movie.swift; sourceTree = "<group>"; };
+		CE3A9A6A2A43368D0076FC29 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -124,6 +124,7 @@
 				6505ADB92A4494E000697643 /* File.swift */,
 				6505ADBA2A4494E000697643 /* OpenAIAPI.swift */,
 				6505ADBB2A4494E000697643 /* Book.swift */,
+				CE3A9A6A2A43368D0076FC29 /* Movie.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -192,7 +193,6 @@
 				B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */,
 				B8F3EBED2A18BB2500199DC5 /* LiterallyApp.swift */,
 				B8F3EBF12A18BB2C00199DC5 /* Assets.xcassets */,
-				CE3A9A6A2A43368D0076FC29 /* movie.swift */,
 			);
 			path = Literally;
 			sourceTree = "<group>";
@@ -405,7 +405,7 @@
 				C1B5CA9B2A424B78006D9F8A /* teste.swift in Sources */,
 				C1B5CA8D2A424B35006D9F8A /* GenreCatalogue.swift in Sources */,
 				C1B5CA882A424B03006D9F8A /* MoviesView.swift in Sources */,
-				CE3A9A6B2A43368D0076FC29 /* movie.swift in Sources */,
+				CE3A9A6B2A43368D0076FC29 /* Movie.swift in Sources */,
 				6505ADCC2A44951800697643 /* HomeCatalog.swift in Sources */,
 				C1B5CA9A2A424B78006D9F8A /* baseSearchView.swift in Sources */,
 				C1B5CA7C2A424A4F006D9F8A /* ThirdPresentationPageView.swift in Sources */,

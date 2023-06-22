@@ -15,6 +15,7 @@ struct MovieCatalog: View {
                 Section(header:
                             Text("Em alta")
                     .font(.system(.title2))
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){
@@ -23,7 +24,7 @@ struct MovieCatalog: View {
                             ForEach(1..<5){each in
                                 NavigationLink(destination: Text(String(each))){
                                     ItemCatalog(imageUrl: "https://books.google.com/books/content?id=Zv3LygAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", title: "John Wickasdfadf", author: "Chad Staheiski")
-                                        .padding(.leading, 30)
+                                        .padding(.leading, 20)
                                 }
                             }
                         }
@@ -34,6 +35,7 @@ struct MovieCatalog: View {
                 Section(header:
                             Text("Recomendações")
                     .font(.system(.title2))
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){
@@ -42,7 +44,7 @@ struct MovieCatalog: View {
                             ForEach(1..<5){each in
                                 NavigationLink(destination: Text(String(each))){
                                     ItemCatalog(imageUrl: "https://books.google.com/books/content?id=Zv3LygAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", title: "John Wick", author: "Chad Staheiski")
-                                        .padding(.leading, 30)
+                                        .padding(.leading, 20)
                                 }
                             }
                         }
@@ -53,8 +55,8 @@ struct MovieCatalog: View {
                 
                 Section(header:
                             Text("Gêneros")
-                    .fontWeight(.bold)
-                    .font(.system(size: 28))
+                    .bold()
+                    .font(.system(.title2))
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){
@@ -63,7 +65,7 @@ struct MovieCatalog: View {
                             ForEach(1..<5){each in
                                 NavigationLink(destination: Text(String(each))){
                                     ItemCatalog(imageUrl: "https://books.google.com/books/content?id=Zv3LygAACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api", title: "Tudo em todo lugar", author: "Chad Staheiski")
-                                        .padding(.leading,25)
+                                        .padding(.leading, 20)
                                 }
                             }
                         }
