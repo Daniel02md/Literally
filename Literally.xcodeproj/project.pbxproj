@@ -16,6 +16,8 @@
 		6505ADCE2A44951800697643 /* BookCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505ADC92A44951800697643 /* BookCatalog.swift */; };
 		6505ADCF2A44951800697643 /* ItemCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505ADCA2A44951800697643 /* ItemCatalog.swift */; };
 		6505ADD02A44951800697643 /* HomePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6505ADCB2A44951800697643 /* HomePageView.swift */; };
+		651661702A44EB4F0003DE95 /* MoviesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6516616F2A44EB4F0003DE95 /* MoviesAPI.swift */; };
+		651661732A44EB750003DE95 /* TMDb in Frameworks */ = {isa = PBXBuildFile; productRef = 651661722A44EB750003DE95 /* TMDb */; };
 		B89690872A4275DE0016670F /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B89690862A4275DE0016670F /* ItemListView.swift */; };
 		B8F3EBEE2A18BB2500199DC5 /* LiterallyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EBED2A18BB2500199DC5 /* LiterallyApp.swift */; };
 		B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F3EBEF2A18BB2500199DC5 /* ContentView.swift */; };
@@ -63,6 +65,7 @@
 		6505ADC92A44951800697643 /* BookCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCatalog.swift; sourceTree = "<group>"; };
 		6505ADCA2A44951800697643 /* ItemCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemCatalog.swift; sourceTree = "<group>"; };
 		6505ADCB2A44951800697643 /* HomePageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePageView.swift; sourceTree = "<group>"; };
+		6516616F2A44EB4F0003DE95 /* MoviesAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesAPI.swift; sourceTree = "<group>"; };
 		B89690862A4275DE0016670F /* ItemListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
 		B8F3EBEA2A18BB2500199DC5 /* Literally.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Literally.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B8F3EBED2A18BB2500199DC5 /* LiterallyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LiterallyApp.swift; sourceTree = "<group>"; };
@@ -91,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				651661732A44EB750003DE95 /* TMDb in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,6 +121,7 @@
 				6505ADB82A4494E000697643 /* BooksAPI.swift */,
 				6505ADBB2A4494E000697643 /* Book.swift */,
 				CE3A9A6A2A43368D0076FC29 /* Movie.swift */,
+				6516616F2A44EB4F0003DE95 /* MoviesAPI.swift */,
 			);
 			path = DataProvider;
 			sourceTree = "<group>";
@@ -259,6 +264,9 @@
 			dependencies = (
 			);
 			name = Literally;
+			packageProductDependencies = (
+				651661722A44EB750003DE95 /* TMDb */,
+			);
 			productName = Literally;
 			productReference = B8F3EBEA2A18BB2500199DC5 /* Literally.app */;
 			productType = "com.apple.product-type.application";
@@ -331,6 +339,9 @@
 				Base,
 			);
 			mainGroup = B8F3EBE12A18BB2500199DC5;
+			packageReferences = (
+				651661712A44EB750003DE95 /* XCRemoteSwiftPackageReference "TMDb" */,
+			);
 			productRefGroup = B8F3EBEB2A18BB2500199DC5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -375,6 +386,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1B5CA7D2A424A4F006D9F8A /* FourthPresentationPagePreview.swift in Sources */,
+				651661702A44EB4F0003DE95 /* MoviesAPI.swift in Sources */,
 				B8F3EBF02A18BB2500199DC5 /* ContentView.swift in Sources */,
 				6505ADC52A4494E000697643 /* Literally.xcdatamodeld in Sources */,
 				6505ADC02A4494E000697643 /* BooksAPI.swift in Sources */,
@@ -715,6 +727,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		651661712A44EB750003DE95 /* XCRemoteSwiftPackageReference "TMDb" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamayoung/TMDb.git";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		651661722A44EB750003DE95 /* TMDb */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 651661712A44EB750003DE95 /* XCRemoteSwiftPackageReference "TMDb" */;
+			productName = TMDb;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		6505ADBE2A4494E000697643 /* Literally.xcdatamodeld */ = {

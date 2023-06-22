@@ -28,7 +28,7 @@ struct BookView: View {
                 
                 Text("")
                     .navigationBarTitle(self.title)
-//                        Text(self.title)
+//                         Text(self.title)
 //                            .padding(.init(top: 0, leading: 0, bottom: 0, trailing: 0))
 //                            .fixedSize(horizontal: false, vertical: true)
 //                            .lineLimit(2)
