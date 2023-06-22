@@ -13,11 +13,14 @@ struct BookView: View {
     var imageUrl: URL
     var title: String
     var rate: Float
-    var sumario: String
-    @State var recomendations: [item] = [
-        item(imageUrl: "https://m.media-amazon.com/images/I/91K-MrUTNOL._AC_UF1000,1000_QL80_.jpg", title: "A Culpa é das estrelas", creator: "Josh Boone", rate: 2.7, sumary: "Dois adolescentes com câncer, Hazel Grace e Gus, embarcam em uma jornada de amor e descoberta. Apesar dos obstáculos, eles encontram força e alegria um no outro, explorando a vida e a mortalidade de uma maneira única e inesquecível."),
-        item(imageUrl: "https://br.web.img3.acsta.net/medias/nmedia/18/91/05/16/20127313.jpg", title: "Para Sempre", creator: "Michael Sucsy", rate: 4.8, sumary: "Paige e Leo são um casal feliz até um acidente mudar tudo. Com a perda de sua memória, Paige não se lembra de Leo, e ele precisa reconquistar seu amor e reconstruir seu relacionamento. Uma história de luta, esperança e amor verdadeiro além das adversidades."),
-        item(imageUrl: "https://upload.wikimedia.org/wikipedia/pt/a/ad/One_Day_Poster.jpg", title: "Um dia", creator: "Lone Scherfig", rate: 4.2, sumary: "Emma e Dexter se encontram todo dia 15 de julho ao longo de vinte anos, testemunhando o desenvolvimento de suas vidas e relacionamento. Conforme eles enfrentam desafios e oportunidades, a amizade e o amor entre eles se tornam uma jornada emocional e reveladora.")
+    var description: String
+    @State var recomendations: [Movie] = [
+//        Movie(movieUrl: "https://m.media-amazon.com/images/I/91K-MrUTNOL._AC_UF1000,1000_QL80_.jpg", title: "A Culpa é das estrelas", creator: "Josh Boone", rate: 2.7, sumary: "Dois adolescentes com câncer, Hazel Grace e Gus, embarcam em uma jornada de amor e descoberta. Apesar dos obstáculos, eles encontram força e alegria um no outro, explorando a vida e a mortalidade de uma maneira única e inesquecível."),
+//        Movie(imageUrl: "https://br.web.img3.acsta.net/medias/nmedia/18/91/05/16/20127313.jpg", title: "Para Sempre", creator: "Michael Sucsy", rate: 4.8, sumary: "Paige e Leo são um casal feliz até um acidente mudar tudo. Com a perda de sua memória, Paige não se lembra de Leo, e ele precisa reconquistar seu amor e reconstruir seu relacionamento. Uma história de luta, esperança e amor verdadeiro além das adversidades."),
+//        Movie(imageUrl: "https://upload.wikimedia.org/wikipedia/pt/a/ad/One_Day_Poster.jpg", title: "Um dia", creator: "Lone Scherfig", rate: 4.2, sumary: "Emma e Dexter se encontram todo dia 15 de julho ao longo de vinte anos, testemunhando o desenvolvimento de suas vidas e relacionamento. Conforme eles enfrentam desafios e oportunidades, a amizade e o amor entre eles se tornam uma jornada emocional e reveladora.")
+        
+//        Movie(movieId: String, title: <#T##String#>, authors: [String], description: <#T##String#>, coverImageURL: <#T##String#>)
+
     ]
     
     @State private var isButtonPressed = false
@@ -101,7 +104,7 @@ struct BookView: View {
                         }
                         
                         VStack() {
-                            Text(self.sumario)
+                            Text(self.description)
                                 .padding(.init(top: 0, leading: 50, bottom: 0, trailing: 50))
                                 .font(.system(size:18))
                         }
@@ -116,13 +119,13 @@ struct BookView: View {
                             
                             VStack(alignment: .trailing){
                                 ForEach(recomendations, id: \.self) { movie in
-                                    let img: URL = URL(string: "\(movie.imageUrl)")!
+                                    let img: URL = URL(string: "\(movie.coverImageURL)")!
 
                                     
                                     NavigationLink(destination:{
-                                        BookView(imageUrl: img, title: movie.title, rate: movie.rate, sumario: "\(movie.sumary)")
+                                        BookView(imageUrl: img, title: movie.title, rate: movie.rate, description: "\(movie.description)")
                                     }){
-                                        ItemListView(imageUrl: img, title: "\(movie.title)", author: "\(movie.creator)", rate: movie.rate)
+                                        ItemListView(imageUrl: img, title: "\(movie.title)", author: "\(movie.authors[0])", rate: movie.rate)
                                             
                                     }
                                     .foregroundColor(.black)
@@ -145,8 +148,7 @@ struct BookView: View {
         static var previews: some View {
             let img: URL = URL(string: "https://m.media-amazon.com/images/I/81-P6oEm8cL._AC_UF1000,1000_QL80_.jpg")!
             
-            BookView(
-                imageUrl: img, title: "Como eu era antes de você", rate: 5, sumario: "Em É assim que acaba, Colleen Hoover nos apresenta Lily, uma jovem que se mudou de uma cidadezinha do Maine para Boston, se formou em marketing e abriu a própria floricultura. E é em um dos terraços de Boston que ela conhece Ryle, um neurocirurgião confiante, teimoso e talvez até um pouco arrogante, com uma grande aversão a relacionamentos, mas que se sente muito atraído por ela.")
+            BookView(imageUrl: img, title: "AAAAAA", rate: 1.3, description: "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa")
         }
     }
 

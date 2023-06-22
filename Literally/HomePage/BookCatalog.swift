@@ -35,21 +35,23 @@ struct BookCatalog: View {
                 Section(header:
                             Text("Autor do dia: \(self.author)")
                     .font(.system(.title2))
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
                             ForEach(byAuthors, id: \.self){resultBooks in
+                                let img: URL = URL(string: resultBooks.coverImageURL)!
                                 NavigationLink(destination:
-                                    Text(resultBooks.title)
+                                    BookView(imageUrl: img, title: resultBooks.title, rate: resultBooks.rate, description: resultBooks.description)
                                     .onAppear{
                                         let data = DataController()
                                         data.addRecentBook(resultBooks, context: managedObjectContext)
                                     }
                                 ){
                                     ItemCatalog(imageUrl: resultBooks.coverImageURL, title: resultBooks.title, author: resultBooks.authors[0])
-                                        .padding(.leading, 30)
+                                        .padding(.leading, 20)
                                 }
                             }
                         }
@@ -61,6 +63,7 @@ struct BookCatalog: View {
                 Section(header:
                             Text("Recentes")
                     .font(.system(.title2))
+                    .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.leading, 30)
                 ){
@@ -73,6 +76,7 @@ struct BookCatalog: View {
                                         title: recent.book!.title!,
                                         author: recent.book!.authors!
                                     )
+                                    .padding(.leading, 20)
                                 }
                             }
                         }
