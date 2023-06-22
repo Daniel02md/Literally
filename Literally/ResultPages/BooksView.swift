@@ -20,16 +20,18 @@ struct BookView: View {
         movie(imageUrl: "https://upload.wikimedia.org/wikipedia/pt/a/ad/One_Day_Poster.jpg", title: "Um dia", creator: "Lone Scherfig", rate: 4.2, sumary: "Emma e Dexter se encontram todo dia 15 de julho ao longo de vinte anos, testemunhando o desenvolvimento de suas vidas e relacionamento. Conforme eles enfrentam desafios e oportunidades, a amizade e o amor entre eles se tornam uma jornada emocional e reveladora.")
     ]
     
+    @State private var isButtonPressed = false
+    
     var body: some View {
         NavigationStack {
             VStack {
                 
                 HStack{
                     Spacer()
-                    Button (action: {
-                        Image("fullfilledIcon")
-                    } label: {
-                        Image("icon")
+                    Button(action: {
+                        isButtonPressed.toggle()
+                    }, label: {
+                        Image(isButtonPressed ? "fullfilledIcon" : "icon")
                     })
                 }
                 .padding()
