@@ -9,7 +9,7 @@
     </entity>
     <entity name="Movie_DB" representedClassName="Movie_DB" syncable="YES" codeGenerationType="class">
         <attribute name="authors" optional="YES" attributeType="String"/>
-        <attribute name="coverImageUrl" optional="YES" attributeType="String"/>
+        <attribute name="coverImageURL" optional="YES" attributeType="String"/>
         <attribute name="fullDescription" optional="YES" attributeType="String"/>
         <attribute name="movieID" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>

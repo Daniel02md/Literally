@@ -8,10 +8,11 @@
 import Foundation
 
 
-struct movie: Hashable{
+struct Movie: Hashable{
     let movieId: String
     let title: String
     let authors: [String]
     let description: String
     var coverImageURL: String
+    var rate: Float = 0.0
 }

@@ -13,6 +13,7 @@ struct Book: Hashable{
     let authors: [String]
     let description: String
     var coverImageURL: String
+    var rate: Float = 0.0
 }
 
 
