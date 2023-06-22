@@ -13,7 +13,7 @@ struct LiterallyApp: App {
     @StateObject private var dataController = DataController()
     
     var body: some Scene {
-        WindowGroup {
+        WindowGroup{
             if isNew{
                 ContentView(isNew: $isNew)
             }

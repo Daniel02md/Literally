@@ -28,7 +28,7 @@ struct BookView: View {
                     Spacer()
                     Button (action: {
                         Image("fullfilledIcon")
-                    } label: {
+                    },label: {
                         Image("icon")
                     })
                 }
