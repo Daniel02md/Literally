@@ -95,17 +95,17 @@ struct MoviesAPI{
 
     
     func search(query: String, completion: @escaping ([Movie]?) -> Void){
-        let queryString = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "+"
+        let queryString = query.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "resre"
         let headers = ["accept": "application/json"]
         let url = URL(string: "https://api.themoviedb.org/3/search/movie?query=\(queryString)&include_adult=false&language=pt-BR&page=1&api_key=\(MoviesAPI.API_KEY)")!
       
         let dataTask = URLSession.shared.dataTask(with: url, completionHandler: { (data, response, error) -> Void in
-            print("testse")
+            
             if let data = data{
                 let result = decodeJSON(data: data)
                 var movies: [Movie] = []
-                for movie in result!.results[1...5]{
-                    print(movie)
+                for movie in result!.results{
+                    
                     let coverImage = "https://image.tmdb.org/t/p/original\(movie.posterPath ?? "")"
                     movies.append(
                         Movie(movieId: String(movie.id),

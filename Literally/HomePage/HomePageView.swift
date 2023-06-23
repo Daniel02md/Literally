@@ -8,10 +8,16 @@ import SwiftUI
 import Foundation
 import CoreData
 
+
+enum ChoiceScope {
+    case movie
+    case book
+}
 struct HomePageView: View{
     
     
     
+    @State var scope: ChoiceScope = .book
     @State var searchTerm: String = ""
     @Binding var bookAuthor: String 
     @Binding var booksByAuthor: [Book]
@@ -21,8 +27,12 @@ struct HomePageView: View{
     var body: some View{
         
         NavigationStack{
-            Searchable(searchOn: Text("search page"), searchOff: HomeCatalog(popular: self.$popular, byAuthors: $booksByAuthor, author: $bookAuthor, topRated: self.$topRated))
+            Searchable(searchOn: baseSearchView(scope: $scope, searchTerm: $searchTerm), searchOff: HomeCatalog(popular: self.$popular, byAuthors: $booksByAuthor, author: $bookAuthor, topRated: self.$topRated))
                 .searchable(text: $searchTerm)
+                .searchScopes($scope) {
+                    Text("Filme").tag(ChoiceScope.movie)
+                    Text("Livro").tag(ChoiceScope.book)
+                }
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
                         NavigationLink(destination: Text("Favoritos")){
@@ -38,6 +48,7 @@ struct HomePageView: View{
                         
                 }
             }
+            
         }
     }
 }
