@@ -12,7 +12,7 @@ struct MovieCatalog: View {
     
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var recents: FetchedResults<RecentMovie>
     
-    @State var byActors: [Movie] = []
+    @Binding var topRated: [Movie]
     @State var actor: String  = String()
     
     let actors = [
@@ -33,7 +33,7 @@ struct MovieCatalog: View {
         ScrollView{
             VStack{
                 Section(header:
-                            Text("Personalidade do dia: \(self.actor)")
+                            Text("Em alta:")
                     .font(.system(.title2))
                     .bold()
                     .frame(maxWidth: .infinity, alignment: .leading)
@@ -41,7 +41,7 @@ struct MovieCatalog: View {
                 ){
                     ScrollView(.horizontal, showsIndicators: false){
                         HStack{
-                            ForEach(byActors, id: \.self){resultMovies in
+                            ForEach(topRated, id: \.movieId){resultMovies in
                                 let img: URL = URL(string: "\(resultMovies.coverImageURL)")!
                                 NavigationLink(destination:
                                                 MovieView(imageUrl: img, title: resultMovies.title, rate: resultMovies.rate, description: resultMovies.description)
@@ -66,10 +66,10 @@ struct MovieCatalog: View {
                         .padding(.leading, 30)
                     ){
                         ScrollView(.horizontal, showsIndicators: false){
-                            HStack{
+                            LazyHStack{
                                 ForEach(recents){recent in
                                     let img: URL = URL(string: recent.movie!.coverImageURL!)!
-
+                                    
                                     NavigationLink(destination: {
                                         MovieView(imageUrl: img, title: recent.movie!.title ?? "Sem título", rate: 0.0, description: recent.movie!.fullDescription ?? "Sem descricao")
                                     }){
@@ -79,7 +79,7 @@ struct MovieCatalog: View {
                                             author: recent.movie!.authors!
                                         )
                                         .padding(.leading, 20)
-
+                                        
                                     }
                                 }
                             }
@@ -92,14 +92,11 @@ struct MovieCatalog: View {
                 
             }
         }
-        .onAppear{
-            self.byActors = [Movie(movieId: "222", title: "Jojo Rabbit", authors:["Taika Waititi"], description: "Alemanha, durante a Segunda Guerra Mundial. Jojo (Roman Griffin Davis) é um jovem nazista de 10 anos, que trata Adolf Hitler (Taika Waititi) como um amigo próximo, em sua imaginação. Seu maior sonho é participar da Juventude Hitlerista, um grupo pró-nazista composto por outras pessoas que concordam com os seus ideais. Um dia, Jojo descobre que sua mãe (Scarlett Johansson) está escondendo uma judia (Thomasin McKenzie) no sótão de casa. Depois de várias tentativas frustradas para expulsá-la, o jovem rebelde começa a desenvolver empatia pela nova hóspede", coverImageURL: "https://br.web.img2.acsta.net/c_310_420/pictures/20/01/28/22/54/2304385.jpg")]//resultado da api
-        }
-    }
-    
-    struct MovieCatalog_Previews: PreviewProvider {
-        static var previews: some View {
-            MovieCatalog()
-        }
     }
 }
+//    struct MovieCatalog_Previews: PreviewProvider {
+//        static var previews: some View {
+//            MovieCatalog()
+//        }
+//    }
+//}

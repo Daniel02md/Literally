@@ -26,6 +26,7 @@ struct LiterallyApp: App {
     ]
     @State var bookAuthor: String = ""
     @State var booksByAuthor: [Book] = []
+    @State var topRated: [Movie] = []
     
     var body: some Scene {
         WindowGroup{
@@ -33,9 +34,16 @@ struct LiterallyApp: App {
                 ContentView(isNew: $isNew)
             }
             else{
-                HomePageView(bookAuthor: self.$bookAuthor, booksByAuthor: self.$booksByAuthor)
+                HomePageView(bookAuthor: self.$bookAuthor, booksByAuthor: self.$booksByAuthor, topRated: self.$topRated)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .onAppear{
+                        MoviesAPI().topRated{
+                            movies in
+                            if let movies = movies{
+                                self.topRated = movies
+                            }
+                        }
+                        
                         self.bookAuthor = self.availableAuthors.randomElement()!
                         BooksAPI.recomendationByAuthor(author: self.bookAuthor){
                             books in
