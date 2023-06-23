@@ -14,6 +14,8 @@ struct HomeCatalog: View {
     }
     
     @State private var scope: HomeScope = .movie
+    @Binding var byAuthors: [Book]
+    @Binding var author: String
     
     var body: some View {
         VStack(){
@@ -54,7 +56,7 @@ struct HomeCatalog: View {
             }
             else{
                
-                BookCatalog()
+                BookCatalog(byAuthors: $byAuthors, author: $author)
             }
             
         }
@@ -63,8 +65,8 @@ struct HomeCatalog: View {
 }
 
 
-struct HomeCatalog_Previews: PreviewProvider {
-    static var previews: some View {
-        HomeCatalog()
-    }
-}
+//struct HomeCatalog_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomeCatalog()
+//    }
+//}

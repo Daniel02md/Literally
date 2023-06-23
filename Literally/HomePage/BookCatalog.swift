@@ -12,23 +12,9 @@ struct BookCatalog: View {
     
     @FetchRequest(sortDescriptors: [SortDescriptor(\.date, order: .reverse)]) var recents: FetchedResults<RecentBook>
     
-    @State var byAuthors: [Book] = []
-    @State var author: String  = String()
-    
-    let authors = [
-        "J.K. Rowling",
-        "George R.R. Martin",
-        "Stephen King",
-        "Michelle Obama",
-        "Dan Brown",
-        "Gillian Flynn",
-        "Haruki Murakami",
-        "Jojo Moyes",
-        "Celeste Ng",
-        "Chimamanda Ngozi Adichie"
-    ]
-    
-    
+    @Binding var byAuthors: [Book]
+    @Binding var author: String
+
     var body: some View {
         ScrollView{
             VStack{
@@ -44,7 +30,7 @@ struct BookCatalog: View {
                             ForEach(byAuthors, id: \.self){resultBooks in
                                 let img: URL = URL(string: resultBooks.coverImageURL)!
                                 NavigationLink(destination:
-                                    BookView(imageUrl: img, title: resultBooks.title, rate: resultBooks.rate, description: resultBooks.description)
+                                                BookView(imageUrl: img, title: resultBooks.title, rate: resultBooks.rate, description: resultBooks.description)
                                     .onAppear{
                                         let data = DataController()
                                         data.addRecentBook(resultBooks, context: managedObjectContext)
@@ -68,10 +54,10 @@ struct BookCatalog: View {
                     .padding(.leading, 30)
                 ){
                     ScrollView(.horizontal, showsIndicators: false){
-                        HStack{
+                        LazyHStack{
                             ForEach(recents){recent in
                                 let img: URL = URL(string: recent.book!.coverImageURL!)!
-
+                                
                                 NavigationLink(destination: {
                                     MovieView(imageUrl: img, title: recent.book!.title ?? "Sem título", rate: 0.0, description: recent.book!.fullDescription ?? "Sem descricao")
                                 }){
@@ -81,6 +67,9 @@ struct BookCatalog: View {
                                         author: recent.book!.authors!
                                     )
                                     .padding(.leading, 20)
+                                    .onAppear{
+                                        print(recent.book!.coverImageURL)
+                                    }
                                 }
                             }
                         }
@@ -89,25 +78,11 @@ struct BookCatalog: View {
                     
                 }
                 Spacer()
-                   
-            }
-        }
-        .onAppear{
-            self.author = self.authors.randomElement()!
-            BooksAPI.recomendationByAuthor(author: self.author){
-                books in
-                if let books = books{
-                    self.byAuthors = books
-                    
-                }
+                
             }
         }
         
     }
 }
 
-struct BookCatalog_Previews: PreviewProvider {
-    static var previews: some View {
-        BookCatalog()
-    }
-}
+

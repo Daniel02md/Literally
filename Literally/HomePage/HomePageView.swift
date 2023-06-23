@@ -11,11 +11,14 @@ import CoreData
 struct HomePageView: View{
     
     
+    
     @State var searchTerm: String = ""
+    @Binding var bookAuthor: String 
+    @Binding var booksByAuthor: [Book]
     var body: some View{
         
         NavigationStack{
-            Searchable(searchOn: Text("search page"), searchOff: HomeCatalog())
+            Searchable(searchOn: Text("search page"), searchOff: HomeCatalog(byAuthors: $booksByAuthor, author: $bookAuthor))
                 .searchable(text: $searchTerm)
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
@@ -53,11 +56,11 @@ struct Searchable: View{
     }
 }
 
-struct Homepage_preview_Previews: PreviewProvider {
-    static var previews: some View {
-        HomePageView()
-    }
-}
+//struct Homepage_preview_Previews: PreviewProvider {
+//    static var previews: some View {
+//        HomePageView()
+//    }
+//}
 
 
 

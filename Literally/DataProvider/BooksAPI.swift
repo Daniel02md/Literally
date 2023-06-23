@@ -47,8 +47,6 @@ struct BooksAPI{
                     params += "&"
                 }
             }
-            
-
             self.BaseURL += params.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         }
         

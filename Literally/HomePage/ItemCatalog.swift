@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ItemCatalog: View {
-    var imageUrl: String
+    @State var imageUrl: String
     var title: String
     var author: String
 
