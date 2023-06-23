@@ -14,9 +14,12 @@ struct HomeCatalog: View {
     }
     
     @State private var scope: HomeScope = .movie
+    
+    @Binding var popular: [Movie]
     @Binding var byAuthors: [Book]
     @Binding var author: String
     @Binding var topRated: [Movie]
+
     var body: some View {
         VStack(){
             HStack(alignment: .top){
@@ -52,7 +55,7 @@ struct HomeCatalog: View {
             
             if (scope == .movie){
                 
-                MovieCatalog(topRated: self.$topRated)
+                MovieCatalog(popular: self.$popular, topRated: self.$topRated)
             }
             else{
                

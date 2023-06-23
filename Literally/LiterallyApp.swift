@@ -27,16 +27,24 @@ struct LiterallyApp: App {
     @State var bookAuthor: String = ""
     @State var booksByAuthor: [Book] = []
     @State var topRated: [Movie] = []
-    
+    @State var popular: [Movie] = []
+
     var body: some Scene {
         WindowGroup{
             if isNew{
                 ContentView(isNew: $isNew)
             }
             else{
-                HomePageView(bookAuthor: self.$bookAuthor, booksByAuthor: self.$booksByAuthor, topRated: self.$topRated)
+                HomePageView(bookAuthor: self.$bookAuthor, booksByAuthor: self.$booksByAuthor, topRated: self.$topRated, popular: self.$popular)
                     .environment(\.managedObjectContext, dataController.container.viewContext)
                     .onAppear{
+                        MoviesAPI().popular{
+                            movies in
+                            if let movies = movies{
+                                self.popular = movies
+                            }
+                        }
+                        
                         MoviesAPI().topRated{
                             movies in
                             if let movies = movies{

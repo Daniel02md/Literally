@@ -14,6 +14,47 @@ struct MoviesAPI{
     static private let API_KEY = "ca972630c6eb2a8cc93780fa74a24203"
     private let tmdbConfig = TMDbConfiguration(apiKey: API_KEY)
     
+    
+    
+    func popular(completion: @escaping ([Movie]?) -> Void) {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/popular?language=pt&page=1&api_key=\(MoviesAPI.API_KEY)")!
+
+        let dataTask = URLSession.shared.dataTask(with: url) { (data, response, error) -> Void in
+            if let data = data {
+                do {
+                    let decoder = JSONDecoder()
+                    decoder.keyDecodingStrategy = .convertFromSnakeCase
+
+                    let result = try decoder.decode(SearchResult.self, from: data)
+
+                    var movies: [Movie] = []
+                    for movie in result.results.prefix(5) {
+                        let coverImage = "https://image.tmdb.org/t/p/original\(movie.posterPath ?? "")"
+                        movies.append(
+                            Movie(movieId: String(movie.id),
+                                  title: movie.title,
+                                  authors: ["movie"],
+                                  description: movie.overview,
+                                  coverImageURL: coverImage)
+                        )
+                    }
+
+                    completion(movies)
+                } catch {
+                    print("Error decoding JSON: \(error)")
+                    completion(nil)
+                }
+            } else if let error = error {
+                print("Error fetching data: \(error)")
+                completion(nil)
+            }
+        }
+
+        dataTask.resume()
+    }
+    
+    
+    
     func topRated(completion: @escaping ([Movie]?) -> Void) {
         let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?include_adult=false&language=pt-BR&page=1&api_key=\(MoviesAPI.API_KEY)")!
 

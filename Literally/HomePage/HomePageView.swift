@@ -16,11 +16,12 @@ struct HomePageView: View{
     @Binding var bookAuthor: String 
     @Binding var booksByAuthor: [Book]
     @Binding var topRated: [Movie]
+    @Binding var popular: [Movie]
     
     var body: some View{
         
         NavigationStack{
-            Searchable(searchOn: Text("search page"), searchOff: HomeCatalog(byAuthors: $booksByAuthor, author: $bookAuthor, topRated: self.$topRated))
+            Searchable(searchOn: Text("search page"), searchOff: HomeCatalog(popular: self.$popular, byAuthors: $booksByAuthor, author: $bookAuthor, topRated: self.$topRated))
                 .searchable(text: $searchTerm)
                 .toolbar{
                     ToolbarItem(placement: .navigationBarTrailing){
